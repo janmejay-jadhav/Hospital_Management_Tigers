@@ -1,5 +1,4 @@
 import './App.css';
-import BookSlots from './pages/BookSlots';
 
 
 
