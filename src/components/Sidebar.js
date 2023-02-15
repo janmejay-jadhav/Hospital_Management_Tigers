@@ -15,22 +15,23 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InfoIcon from '@mui/icons-material/Info';
-import About from './About';
+import About from '../pages/About';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import BookOnlineIcon from '@mui/icons-material/BookOnline';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LogoutIcon from '@mui/icons-material/Logout';
-import PlansandPrices from './PlansandPrices';
-import Bookslots from './Bookslots';
-import Users from './Users';
-import Bookings from './Bookings';
-import Logout from './Logout';
-import TextField from '@mui/material/TextField';
+import Plansprice from '../pages/Plansprice';
+import Bookslots from '../pages/BookSlots';
+
+import Bookings from '../pages/Booking';
+
+
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import "./Style.css";
 import { CardMedia, Container } from '@mui/material';
 import { useNavigate } from 'react-router';
+import Usertab from '../pages/Usertab';
 
 
 const drawerWidth = 252;
@@ -93,7 +94,7 @@ function ResponsiveDrawer(props) {
               <ListItemText primary="Bookings" />
             </ListItemButton>
           </ListItem>
-          <ListItem  disablePadding onClick={()=>history("/")}>
+          <ListItem  disablePadding onClick={()=>{history("/");localStorage.removeItem("token")}}>
             <ListItemButton>
               <ListItemIcon>
                  < LogoutIcon/> 
@@ -119,6 +120,8 @@ function ResponsiveDrawer(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
+let ls=JSON.parse(localStorage.getItem("token"));
+
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -143,7 +146,7 @@ function ResponsiveDrawer(props) {
           <Typography variant="h6" noWrap component="div" className='m'>
           <Box sx={{ display: 'flex', alignItems: 'flex-end',color:'white'}}>
         <AccountCircle sx={{ color: 'white', mr: 1, my: 0.5 }} />
-       Mounika
+       {ls.fname+" "+ls.lname}
            </Box>
             </Typography>
             </Toolbar>
@@ -185,9 +188,9 @@ function ResponsiveDrawer(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
      {menudata==="About" && <About />}
-     {menudata==="Plans and Prices" && <PlansandPrices />}
+     {menudata==="Plans & Price" && <Plansprice />}
      {menudata==="Book Slots" && <Bookslots />}
-     {menudata==="Users" && <Users />}
+     {menudata==="Users" && <Usertab/>}
      {menudata==="Bookings" && <Bookings />}
      
        
