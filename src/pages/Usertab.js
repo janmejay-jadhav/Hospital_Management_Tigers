@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Paper,
   Table,
@@ -52,12 +53,12 @@ function Usertab() {
   };
 //  
   return (
-    <>
-      <TableContainer component={Paper} style={tablestyle} elevation={22}>
+    <Box marginTop={20}>
+      <TableContainer component={Paper} style={tablestyle} elevation={22} sx={12}>
         <Table >
           <TableHead>
             <TableRow>
-              <TableCell style={{fontWeight:"bolder"}}>FIRSTNAME</TableCell>
+              <TableCell style={{fontWeight:"bolder"  }}>FIRSTNAME</TableCell>
               <TableCell style={{fontWeight:"bolder"}}>LASTNAME</TableCell>
               <TableCell style={{fontWeight:"bolder"}}>EMAIL</TableCell>
               <TableCell style={{fontWeight:"bolder"}}>ADDRESS</TableCell>
@@ -75,7 +76,7 @@ function Usertab() {
                 <TableCell>{user.contact}</TableCell>
               </TableRow>
             ))}
-            {/* {data.map((user, index) => (
+           {data.map((user, index) => (
               <TableRow key={index} id={index}>
                 <TableCell>{user.fname}</TableCell>
                 <TableCell>{user.lname}</TableCell>
@@ -83,11 +84,11 @@ function Usertab() {
                 <TableCell>{user.address}</TableCell>
                 <TableCell>{user.contact}</TableCell>
               </TableRow>
-            ))} */}
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </Box>
   );
 }
 

@@ -1,10 +1,12 @@
-import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 import { eye } from "react-icons-kit/icomoon/eye";
 import { eyeBlocked } from "react-icons-kit/icomoon/eyeBlocked";
 import Icon from "react-icons-kit";
 import { Link, useNavigate } from "react-router-dom";
+import "../pages/Register.css"
+
 
 let ls = localStorage.getItem("Users");
 let table = ls ? JSON.parse(ls) : [];
@@ -80,12 +82,12 @@ function Register() {
 
   const EmailValidation = () => {
     const regXp = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
-    if (regXp.test(cont.email)) {
-      setMessage("*Email is Invalid");
-    } else if (cont.email === "") {
+    if (cont.email === "") {
       setMessage("*Please Enter Valid Email");
     } else if (!regXp.test(cont.email)) {
       setMessage("*Email is not Valid");
+    }else if (!(cont.email.match(regXp))) {
+      setMessage("*Email is Invalid");
     } else {
       setMessage("");
     }
@@ -97,25 +99,29 @@ function Register() {
     setCont({ ...cont, [name]: values });
   };
   return (
+    <Box >
     <Paper
-      elevation={5}
+    className="paper1"
+      elevation={6}
       sx={{
         justifyContent: "center",
         width: { xs: "100%", md: "50%" },
         paddingBottom: "50px",
         marginLeft: { md: "25%" },
-        marginTop: "50px",
+        marginTop: "20px",
+          
       }}>
-      <Typography variant="h4" sx={{ fontWeight: "bolder", pt: "20px" }}>
-        Sign Up
+      
+      <Typography variant="h4" sx={{ fontWeight: "bolder", pt: "20px", color:"#ff5722", fontFamily:"monospace",textTransform:"uppercase"}}>
+        Registration form
       </Typography>
       <br />
-      <Grid container direction={"column"} spacing={2}>
+      <Grid container direction={"column"} display={"flex"} spacing={2}>
         <Grid item>
           <TextField
             variant="outlined"
             label="First Name"
-            sx={{ width: "60%" }}
+            sx={{ width: "60%",background:"" }}
             value={cont.fname}
             name="fname"
             onChange={HandleChange}
@@ -205,7 +211,7 @@ function Register() {
           </Button>
         </Grid>
         <Grid item display={"flex"} justifyContent="space-evenly">
-          <Button onClick={() => {AddUser();nav("/")}} variant="contained">
+          <Button onClick={() => {AddUser();nav("/")}} variant="contained" sx={{backgroundColor:"#3f51b5"}}>
             Register
           </Button>
           <Button variant="contained" color="error">
@@ -217,8 +223,11 @@ function Register() {
         <Typography>
         Already Have An Account? <Link to={"/"}>Login</Link>
         </Typography>
+        <Grid >
+        </Grid>
       </Grid>
     </Paper>
+    </Box>
   );
 }
 

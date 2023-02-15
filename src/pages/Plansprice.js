@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Card,
@@ -10,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import { fontWeight } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Planmodal from "../components/Planmodal";
 
 const plans = [
@@ -54,12 +55,17 @@ const plans = [
 let cardstyle = {
   backgroundColor: "skyblue",
   margin: "30px",
+  Image: "",
 };
 
-function Plansprice() {
+function PlansPrice() {
   const [open, setOpen] = useState(false);
+
+  // useEffect(() => {
+  //   localStorage.setItem("admindata", JSON.stringify(plans));
+  // }, []);
   return (
-    <>
+    <Box marginTop={20}>
       <Button
         variant="contained"
         style={{ backgroundColor: "green" }}
@@ -77,13 +83,27 @@ function Plansprice() {
               sx={{ minWidth: 275, boxShadow: "4px 4px 5px black" }}
               style={cardstyle}
             >
-              <CardContent >
-                <Typography variant="h5">Plan Name :{plan.name}</Typography>
-                <Typography variant="h5">Plan Price :{plan.price}</Typography>
-                <Typography variant="h5">
+              <CardContent>
+                <Avatar
+                  alt="manoj"
+                  sx={{ width: 100, height: 100, margin: "auto" }}
+                  src="https://cdn.pixabay.com/photo/2017/01/31/22/32/doctor-2027768_960_720.png"
+                />
+                <Typography variant="h5" fontWeight="bold" color="red">
+                  Plan Name :{plan.name}
+                </Typography>
+                <Typography variant="h5" color="#783046" fontWeight="bold">
+                  Plan Price :{plan.price}
+                </Typography>
+                <Typography variant="h5" color="blue" fontWeight="bold">
                   Doctor Name :{plan.doctorName}
                 </Typography>
-                <Typography variant="h5" alignItems="center">
+                <Typography
+                  variant="h5"
+                  alignItems="center"
+                  fontWeight="bold"
+                  color="green"
+                >
                   Slots Available:{plan.slots}
                 </Typography>
               </CardContent>
@@ -92,9 +112,8 @@ function Plansprice() {
         ))}
       </Grid>
       {open && <Planmodal open={open} setOpen={setOpen} plans={plans} />}
-      
-    </>
+    </Box>
   );
 }
 
-export default Plansprice;
+export default PlansPrice;
