@@ -29,12 +29,14 @@ import Logout from './Logout';
 import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import "./Style.css";
-import { CardMedia } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { CardMedia, Container } from '@mui/material';
+import { useNavigate } from 'react-router';
 
-const drawerWidth = 240;
+
+const drawerWidth = 252;
 
 function ResponsiveDrawer(props) {
+  const history = useNavigate();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [menudata, setMenudata] = React.useState("About");
@@ -42,10 +44,11 @@ function ResponsiveDrawer(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  let history=useNavigate();
+
 
   const drawer = (
     <div>
+      <Container>
       <Toolbar />
       <Divider />
       <List>
@@ -58,12 +61,12 @@ function ResponsiveDrawer(props) {
               <ListItemText primary="About" />
             </ListItemButton>
           </ListItem>
-          <ListItem  disablePadding onClick={()=>setMenudata("Plans and Prices")}>
+          <ListItem  disablePadding onClick={()=>setMenudata("Plans & Price")}>
             <ListItemButton>
               <ListItemIcon>
                  < MonetizationOnIcon/> 
               </ListItemIcon>
-              <ListItemText primary="Plans and Prices"  />
+              <ListItemText primary="Plans & Price"  />
             </ListItemButton>
           </ListItem>
           <ListItem  disablePadding onClick={()=>setMenudata("Book Slots")}>
@@ -90,7 +93,7 @@ function ResponsiveDrawer(props) {
               <ListItemText primary="Bookings" />
             </ListItemButton>
           </ListItem>
-          <ListItem  disablePadding onClick={()=>{setMenudata("Logout")}}>
+          <ListItem  disablePadding onClick={()=>history("/")}>
             <ListItemButton>
               <ListItemIcon>
                  < LogoutIcon/> 
@@ -104,12 +107,14 @@ function ResponsiveDrawer(props) {
       <Divider />
       
       <CardMedia
-        sx={{ height: 250}}
+        sx={{ height: 160}}
         image="./img/analysis-gdb1f695c1_1920.jpg"
         title="green iguana"
         alt="error"
       />
-      
+      <strong><p>Welcome to clinic</p></strong>
+    
+      </Container>
     </div>
   );
 
@@ -184,7 +189,7 @@ function ResponsiveDrawer(props) {
      {menudata==="Book Slots" && <Bookslots />}
      {menudata==="Users" && <Users />}
      {menudata==="Bookings" && <Bookings />}
-     {menudata==="Logout" && <Logout />}
+     
        
        
       </Box>
