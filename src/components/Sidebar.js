@@ -50,7 +50,17 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <Container>
-      <Toolbar />
+        <Toolbar>
+          <Typography variant='h4' component='h1' className='font'  >
+            MY-3 CLINIC
+          </Typography>
+        </Toolbar>
+      {/* <CardMedia
+        sx={{ height: 55}}
+        image="./img/pharmacy-g0150676b6_1920.jpg"
+        title="green iguana"
+        alt="error"
+      /> */}
       <Divider />
       <List>
         
