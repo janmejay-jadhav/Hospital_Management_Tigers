@@ -47,7 +47,7 @@ function Login() {
       }
     });
     if (localStorage.getItem("token")) {
-      nav("/about");
+      nav("/sidebar");
     }
   };
 
