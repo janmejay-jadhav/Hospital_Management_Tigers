@@ -15,7 +15,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const plans = [
   "CBC Test",
@@ -43,13 +43,33 @@ function BookSlots() {
     modeOfPayment: "",
   });
 
+  console.log(patient)
+  //error useStates
   const [nameError, setNameError] = useState({ state: false, message: "" });
   const [genderError, setGenderError] = useState({ state: false, message: "" });
   const [dateError, setDateError] = useState({ state: false, message: "" });
   const [planError, setPlanError] = useState({ state: false, message: "" });
   const [mopError, setMopError] = useState({ state: false, message: "" });
 
-  console.log(patient);
+  //slot booking handler
+  // const [slots, setSlots] = useState(false)
+
+  // let count =0;
+  // useEffect(() => {
+  //   patientDetails.map((val)=>{
+  //     if(val.plan.includes("Thyroid Test",0))
+  //     {
+  //       count++
+  //     }
+  //     if(count===2)
+  //     {
+  //       setSlots(true)
+  //     }
+  // })
+  
+  // }, [patient.plan])
+  
+
 
   //handleChange for input fields
   let handleOnChange = (event) => {
@@ -221,7 +241,7 @@ function BookSlots() {
                 input={<OutlinedInput label="Select Test" />}
               >
                 {plans.map((plan) => (
-                  <MenuItem key={plan} value={plan}>
+                  <MenuItem disabled={patientDetails} key={plan} value={plan}>
                     {plan}
                   </MenuItem>
                 ))}
