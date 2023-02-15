@@ -1,7 +1,7 @@
 import { Button, Modal, TextField, Typography } from "@mui/material";
 import { alignProperty } from "@mui/material/styles/cssUtils";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const style = {
   position: "absolute",
@@ -24,6 +24,7 @@ function Planmodal({ open, setOpen, plans }) {
     doctorName: "",
     slots: "",
   });
+
   console.log(input);
   let handleiputchange = (e) => {
     const { name, value } = e.target;
@@ -74,6 +75,8 @@ function Planmodal({ open, setOpen, plans }) {
             variant="contained"
             onClick={() => {
               plans.push(input);
+              setOpen(false);
+              admindata();
             }}
           >
             {" "}

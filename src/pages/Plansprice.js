@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { fontWeight } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Planmodal from "../components/Planmodal";
 
 const plans = [
@@ -54,9 +54,17 @@ let cardstyle = {
   backgroundColor: "skyblue",
   margin: "30px",
 };
+let localdata = JSON.parse(localStorage.getItem("admindata"));
+
+let data = localdata?localdata:plans;
 
 function PlansPrice() {
   const [open, setOpen] = useState(false);
+
+  
+  // useEffect(() => {
+  //   localStorage.setItem("admindata", JSON.stringify(plans));
+  // }, []);
   return (
     <>
       <Button
@@ -70,13 +78,13 @@ function PlansPrice() {
         ADD PLAN
       </Button>
       <Grid container spacing={8} rowSpacing={1}>
-        {plans.map((plan, index) => (
+        {data.map((plan, index) => (
           <Grid item xs={4} key={index}>
             <Card
               sx={{ minWidth: 275, boxShadow: "4px 4px 5px black" }}
               style={cardstyle}
             >
-              <CardContent >
+              <CardContent>
                 <Typography variant="h5">Plan Name :{plan.name}</Typography>
                 <Typography variant="h5">Plan Price :{plan.price}</Typography>
                 <Typography variant="h5">
