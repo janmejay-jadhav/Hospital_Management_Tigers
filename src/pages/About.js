@@ -6,9 +6,10 @@
     import Button from '@mui/material/Button';
     import Typography from '@mui/material/Typography';
     import { Box } from '@mui/system'
-    import { Grid } from '@mui/material';
+    import { Container, Grid, TableFooter } from '@mui/material';
     import Popper from '@mui/material/Popper';
-
+import Rating from '@mui/material/Rating';
+import './About.css'
 
 
 
@@ -25,7 +26,7 @@
         const open = Boolean(anchorEl);
         const id = open ? 'simple-popper' : undefined;
     
-    
+        const [value, setValue] = React.useState(5);
         return (
             <div align='center'>
         <div className='happy'>
@@ -43,12 +44,15 @@
     So we are ready to help you out with our best possible way with the use of best Technology and best team of the Doctors.
     </p>
     <h4>Our Team and Specialists</h4>
+    <p>Our Doctors make an important contribution to the management and leadership of health services and the delivery of healthcare across the India as part of a multidisciplinary team. All doctors have some responsibilities for using resources; many will also lead teams or be involved in supervising colleagues.</p>
+    <p>Our Doctor are responsible for all sides of care of a patient. They diagnose, educate, and treat patients to ensure that they have the best possible care. A few of the main duties of a doctor are performing diagnostic tests, recommending specialists for patients, document patient's medical history, and educating patients. They also have to administer vaccines and other treatments. Some of the jobs titles that a doctor could grow into are head of research or hospital president.
+    </p>
     </div>
-        <Box>
-        <Grid container maxHeight={"100px"}>
+        <Box className="tom">
+        <Grid container maxHeight={"100%"} columns={{xs:4,md:12}}>
 
         <Grid item >
-        <Card sx={{ maxWidth: 345 }} className='kk'>
+        <Card sx={{ maxWidth: 280,height:"100%" }} className='kk' columns={{xs:3}}>
         <CardMedia
         />
         <CardContent>
@@ -65,7 +69,13 @@
         </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Share</Button>
+        <Box    sx={{
+            '& > legend': { mt: 2 },
+          }}
+       >
+       <Typography component="legend"></Typography>
+      <Rating name="read-only" value={value} readOnly />
+      </Box>
         <Button size="small">Learn More</Button>
         </CardActions>
         
@@ -73,7 +83,7 @@
         </Card>
         </Grid>
         <Grid item>
-        <Card sx={{ maxWidth: 345,height:"100%" }}>
+        <Card sx={{ maxWidth: 280,height:"100%" }} className='kk' columns={{xs:3}}>
         <CardMedia
         
         // sx={{ height: 140 }}
@@ -93,13 +103,18 @@
         </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Box    sx={{
+            '& > legend': { mt: 2 },
+          }}
+       >
+       <Typography component="legend"></Typography>
+      <Rating name="read-only" value={value} readOnly />
+      </Box><Button size="small">Learn More</Button>
         </CardActions>
     </Card>
     </Grid>
     <Grid>
-    <Card sx={{ maxWidth: 345, height:"100%" }}>
+    <Card sx={{ maxWidth: 280, height:"100%" }} className='kk' columns={{xs:3}}>
     <CardMedia        title="Dr information"
     />
     <CardContent>
@@ -115,18 +130,24 @@
 
         Constipation, Puberty, Nutrition, Autism</Typography>
     </CardContent>
+    
     <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+    <Box    sx={{
+        '& > legend': { mt: 2 },
+      }}
+   >
+   <Typography component="legend"></Typography>
+  <Rating name="read-only" value={value} readOnly />
+  </Box><Button size="small">Learn More</Button>
     </CardActions>
     </Card>
     </Grid>
     <Grid>
-    <Card sx={{ maxWidth: 345,height:"100%" }}>
+    <Card sx={{ maxWidth: 280,height:"100%" }} className='kk' columns={{xs:3}}>
     <CardMedia
     />
     <CardContent>
-    <img src='assets/doctor.jpg' className='im' width={'250px'} height={'300px'}></img>
+    <img src='assets/doctor.jpg' className='im' width={'200px'} height={'300px'}></img>
     <Typography gutterBottom variant="h5" component="div">
     Recommended Doctors
     </Typography>
@@ -136,12 +157,17 @@
     </Typography>
     </CardContent>
     <CardActions>
-    <Button size="small">Share</Button>
-    <Button size="small">Learn More</Button>
+    <Box    sx={{
+        '& > legend': { mt: 2 },
+      }}
+   >
+   <Typography component="legend"></Typography>
+  <Rating name="read-only" value={value} readOnly />
+  </Box> <Button size="small">Learn More</Button>
     </CardActions>
     </Card>
     </Grid>
-        </Grid>
+        </Grid >
         </Box>
         
 
@@ -279,6 +305,47 @@
     Instant online consultations anytime, anywhere<br/>
         </p>
         </Box>
+        <footer >
+        
+        <Container >
+        <div className='foot'>
+        <Box className='fail'>
+        <div>
+        <i class="fa-regular fa-hospital"></i>
+        <p>
+        The Nightingale Pledge:<br/> A Hippocratic Oath for Nurses I solemnly pledge myself before God and in the presence of this assembly to pass my life in purity and to practice my profession faithfully. I will abstain from whatever is deleterious and mischievous and will not take or knowingly administer any harmful drug.
+        </p></div>
+        </Box>
+        <Box >
+        <div className='major'>
+        <div>
+        <i className="fa-brands fa-whatsapp beta"></i>
+        </div>
+        <div >
+        <i className="fa-brands fa-instagram beta"></i>
+        </div>
+        <div >
+        <i className="fa-brands fa-facebook beta"></i>
+        </div>
+        <div  >        
+        <i className="fa-brands fa-twitter beta"></i>
+        </div>
+        <div >
+        <i className="fa-brands fa-youtube beta"></i>
+        </div>
+        <div >
+        <i className="fa-solid fa-exclamation beta"></i>
+        </div>
+        <div >
+        <i className="fa-regular fa-phone beta"></i>
+        </div>
+        </div>
+        </Box>
+        </div>
+        </Container>
+        
+
+        </footer>
         </Box>
         </div>
         </div>

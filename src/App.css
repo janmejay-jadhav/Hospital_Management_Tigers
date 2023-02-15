@@ -56,7 +56,9 @@ margin: 0 0 20px;
   flex-flow: row;
   margin-top: 22em;
 }
-
+.tom{
+  margin-left: 0.8em;
+}
 .welcome{
   display: flex;
  color:rgb(55, 250, 152);
@@ -65,8 +67,8 @@ margin: 0 0 20px;
 }
 .im{
 max-height: 200px;
-padding-left: 55px;
+padding-left: 10px;
 }
 .kk{
-  background-color: red;
+margin-left: 50px;
 }
