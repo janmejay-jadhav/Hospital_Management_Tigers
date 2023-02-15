@@ -75,7 +75,7 @@ function Usertab() {
                 <TableCell>{user.contact}</TableCell>
               </TableRow>
             ))}
-            {/* {data.map((user, index) => (
+           {data.map((user, index) => (
               <TableRow key={index} id={index}>
                 <TableCell>{user.fname}</TableCell>
                 <TableCell>{user.lname}</TableCell>
@@ -83,7 +83,7 @@ function Usertab() {
                 <TableCell>{user.address}</TableCell>
                 <TableCell>{user.contact}</TableCell>
               </TableRow>
-            ))} */}
+            ))}
           </TableBody>
         </Table>
       </TableContainer>

@@ -15,15 +15,15 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const plans = [
-  "CBC Test",
-  "Thyroid Test",
-  "ECG Test",
-  "CT Scan",
-  "MRI Scan",
-  "Enzyme Test",
+  "CBC TEST",
+  "THYROID TEST",
+  "ECG TEST",
+  "CT SCAN",
+  "MRI SCAN",
+  "ENZYME TEST",
 ];
 
 const gender = ["Male", "Female", "Other"];
@@ -43,13 +43,26 @@ function BookSlots() {
     modeOfPayment: "",
   });
 
+  console.log(patient);
+  //error useStates
   const [nameError, setNameError] = useState({ state: false, message: "" });
   const [genderError, setGenderError] = useState({ state: false, message: "" });
   const [dateError, setDateError] = useState({ state: false, message: "" });
   const [planError, setPlanError] = useState({ state: false, message: "" });
   const [mopError, setMopError] = useState({ state: false, message: "" });
 
-  console.log(patient);
+  // slot booking handler
+  let admin = JSON.parse(localStorage.getItem("admindata"));
+  let slotHandler = () => {
+    patient.plan.map((plans) => {
+      admin.map((slots) => {
+        if (plans.includes(slots.name, 0)) {
+          slots.slots = --slots.slots;
+        }
+      });
+    });
+    localStorage.setItem("admindata", JSON.stringify(admin));
+  };
 
   //handleChange for input fields
   let handleOnChange = (event) => {
@@ -139,6 +152,7 @@ function BookSlots() {
     ) {
       patientDetails.push(patient);
       localStorage.setItem("patientDetails", JSON.stringify(patientDetails));
+      slotHandler();
       handleReset();
       alert("Appointment Booked");
     } else {
@@ -154,9 +168,9 @@ function BookSlots() {
       <Paper
         elevation={4}
         sx={{
-          width: { xs: "100%", md: "50%" },
+          width: { xs: "100%", md: "70%" },
           padding: { xs: 5, md: 10 },
-          margin: { md: "2% auto" },
+          margin: { md: "7% auto" },
         }}
       >
         <Typography variant="h4" color="greenyellow" fontWeight={900} mb={5}>
@@ -177,7 +191,7 @@ function BookSlots() {
           </Grid>
           <Grid
             item
-            display={{ md: "flex" }}
+            display={{xs:"block", md: "flex" }}
             alignItems="center"
             justifyContent="space-around"
             xs={8}
@@ -220,8 +234,12 @@ function BookSlots() {
                 onChange={handleChange}
                 input={<OutlinedInput label="Select Test" />}
               >
-                {plans.map((plan) => (
-                  <MenuItem key={plan} value={plan}>
+                {plans.map((plan, index) => (
+                  <MenuItem
+                    disabled={admin[index].slots <= 0 ? true : false}
+                    key={plan}
+                    value={plan}
+                  >
                     {plan}
                   </MenuItem>
                 ))}
@@ -254,8 +272,8 @@ function BookSlots() {
           <Grid
             item
             xs={8}
-            display={{ md: "flex" }}
-            justifyContent={{ md: "space-around" }}
+            display={{xs:"block", md: "flex" }}
+            justifyContent={{xs:"space-between", md: "space-around" }}
           >
             <Button
               variant="contained"

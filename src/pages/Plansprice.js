@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { fontWeight } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Planmodal from "../components/Planmodal";
 
 const plans = [
@@ -58,6 +58,10 @@ let cardstyle = {
 
 function Plansprice() {
   const [open, setOpen] = useState(false);
+
+  // useEffect(() => {
+  //   localStorage.setItem("admindata", JSON.stringify(plans));
+  // }, []);
   return (
     <>
       <Button
@@ -77,7 +81,7 @@ function Plansprice() {
               sx={{ minWidth: 275, boxShadow: "4px 4px 5px black" }}
               style={cardstyle}
             >
-              <CardContent >
+              <CardContent>
                 <Typography variant="h5">Plan Name :{plan.name}</Typography>
                 <Typography variant="h5">Plan Price :{plan.price}</Typography>
                 <Typography variant="h5">
