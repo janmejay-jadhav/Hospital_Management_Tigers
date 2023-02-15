@@ -1,4 +1,4 @@
-import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 import React, { useState } from "react";
@@ -52,33 +52,35 @@ function Login() {
   };
 
   return (
+    <Box sx={{backgroundImage:""}}>
     <Paper
       elevation={5}
       sx={{
         justifyContent: "center",
-        width: { xs: "100%", md: "50%" },
+        width: { xs: "100%", md: "40rem" },
         paddingBottom: "30px",
         marginLeft: { md: "25%" },
         marginTop: "100px",
         paddingTop: "20px",
-        backgroundColor: "",
+        // backgroundColor: "",
+        
       }}>
-      <Typography variant="h4" fontWeight={"bolder"} sx={{ mb: "40px" }}>
+      <Typography variant="h4" fontWeight={"bolder"} sx={{ mb: "40px", color:"#ff5722", fontFamily:"monospace",textTransform:"uppercase" }}>
         Login
       </Typography>
 
       <Grid container direction={"column"} spacing={3}>
-        <Grid item xs={12}>
+        <Grid item >
           <TextField
             className={classes.field}
             id="username"
-            label="Username"
+            label="Email"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </Grid>
 
-        <Grid item xs={1} display={"flex"} justifyContent="center" ml={8}>
+        <Grid item  display={"flex"} justifyContent="center" ml={8}>
           <TextField
             className={classes.field}
             type={types}
@@ -86,23 +88,26 @@ function Login() {
             label="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          />
+           
+          ></TextField>
           <Button size="small" onClick={HandleToggle}>
-            <Icon icon={icon} size={20}></Icon>
-          </Button>
+          <Icon icon={icon} size={20}></Icon>
+        </Button>
+          
         </Grid>
 
         <Grid item xs={12}>
-          <Button variant="contained" color="primary" onClick={handleSubmit} >
+          <Button variant="contained" color="primary" onClick={()=>{handleSubmit()}} >
             Login
           </Button>
         </Grid>
         <br />
         <Typography>
-            Are you New Member Click <Link to={"/register"}>Register</Link>
+            Are you New Member? Click <Link to={"/register"}>Register</Link>
           </Typography>
       </Grid>
     </Paper>
+    </Box>
   );
 }
 
