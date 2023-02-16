@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Box, Button, CardMedia, Grid, Paper, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 import React, { useState } from "react";
@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { GradientTwoTone } from "@mui/icons-material";
+
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -33,21 +34,23 @@ function Login() {
 
   let nav = useNavigate();
 
+  let local = JSON.parse(localStorage.getItem("Users"));
   const handleSubmit = () => {
-    let local = JSON.parse(localStorage.getItem("Users"));
-    local.map((value, index) => {
-      if (username === "" || password === "") {
-        alert("Field should not be empty");
-      } else if (value.email === username && value.password === password) {
-        alert("Login Successful!!");
-        let token = value;
-        localStorage.setItem("token", JSON.stringify(token));
-      } else {
-        alert("Email or Password is Invalid");
+    if (username === "" || password === "") {
+      alert("Field should not be empty");
+    } else {
+      local.map((value, index) => {
+        if (value.email === username && value.password === password) {
+          alert("Login Successful!!");
+          let token = value;
+          localStorage.setItem("token", JSON.stringify(token));
+        } else {
+          alert("Email or Password is Invalid");
+        }
+      });
+      if (localStorage.getItem("token")) {
+        nav("/sidebar");
       }
-    });
-    if (localStorage.getItem("token")) {
-      nav("/sidebar");
     }
   };
 
@@ -86,7 +89,7 @@ function Login() {
   };
 
   return (
-    <Box className="box1">
+    <Box>
       <Paper
         className="paper12"
         elevation={5}
@@ -95,8 +98,8 @@ function Login() {
           width: { xs: "100%", md: "50%" },
           paddingBottom: { xs: "50px" },
           marginLeft: { md: "25%" },
-          marginTop: "100px",
           paddingTop: "20px",
+          marginTop:{md:"100px"}
         }}>
         <AccountCircleIcon sx={{ fontSize: "80px", color: "GrayText" }} />
         <Typography
@@ -107,7 +110,7 @@ function Login() {
             mb: "10px",
             color: "#ff5722",
             textTransform: "uppercase",
-            fontFamily:"sans-serif"
+            fontFamily: "sans-serif",
           }}>
           Login
         </Typography>
@@ -154,7 +157,9 @@ function Login() {
           </Grid>
           <br />
           <Typography>
-            <sup>Are you New Member? Click <Link to={"/register"}>Register</Link></sup>
+            <sup>
+              Are you New Member? Click <Link to={"/register"}>Register</Link>
+            </sup>
           </Typography>
         </Grid>
       </Paper>

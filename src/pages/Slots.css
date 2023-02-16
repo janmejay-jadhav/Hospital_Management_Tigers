@@ -1,0 +1,23 @@
+.slot {
+  background-image: url("../assets/pexels-karolina-grabowska-4386467.jpg");
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
+  position: relative;
+  padding-left: 10px !important;
+  padding-top: 5px !important;
+}
+
+.slot::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: rgb(221, 217, 217);
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.table{
+    background: radial-gradient(ellipse at top, #50b4dc, transparent),
+            radial-gradient(ellipse at bottom, #7ee2f0, transparent);
+}
