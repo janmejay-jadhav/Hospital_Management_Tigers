@@ -6,39 +6,27 @@
     import Button from '@mui/material/Button';
     import Typography from '@mui/material/Typography';
     import { Box } from '@mui/system'
-    import { Container, Grid, TableFooter } from '@mui/material';
-    import Popper from '@mui/material/Popper';
-import Rating from '@mui/material/Rating';
-import './About.css'
+    import { Container, Grid } from '@mui/material';
+    import Rating from '@mui/material/Rating';
+    import './About.css'
 
-
+  
 
 
     function About() {
 
-        const [anchorEl, setAnchorEl] = React.useState(null);
-
-        const handleClick = (event) => {
-        setAnchorEl(anchorEl ? null : event.currentTarget);
-        };
 
 
-        const open = Boolean(anchorEl);
-        const id = open ? 'simple-popper' : undefined;
-    
         const [value, setValue] = React.useState(5);
         return (
-            <div align='center'>
-        <div className='happy'>
-    <div className='jss'>
+         <Box align='center' style={{marginTop:'2.3em'}} >
+        <Box className='happy'>
+    <div className='jss' sx={12} md={3}>
     <h1> ABOUT US</h1>
     <h2>Know more about us, We are more than a hospital</h2>
 
     </div>
-    <div>
-    
-    </div>
-    <div>
+    <Box sx={12} md={3} >
     <h4>Who We Are ....?</h4>
     <p> We are the team with an ambition to provide the people best and affordable treatment for everyone.<br/>
     So we are ready to help you out with our best possible way with the use of best Technology and best team of the Doctors.
@@ -47,12 +35,12 @@ import './About.css'
     <p>Our Doctors make an important contribution to the management and leadership of health services and the delivery of healthcare across the India as part of a multidisciplinary team. All doctors have some responsibilities for using resources; many will also lead teams or be involved in supervising colleagues.</p>
     <p>Our Doctor are responsible for all sides of care of a patient. They diagnose, educate, and treat patients to ensure that they have the best possible care. A few of the main duties of a doctor are performing diagnostic tests, recommending specialists for patients, document patient's medical history, and educating patients. They also have to administer vaccines and other treatments. Some of the jobs titles that a doctor could grow into are head of research or hospital president.
     </p>
-    </div>
-        <Box className="tom">
-        <Grid container maxHeight={"100%"} columns={{xs:4,md:12}}>
+    </Box>
+        
+        <Grid container spacing={2} display="flex" justifyContent="center">
 
-        <Grid item >
-        <Card sx={{ maxWidth: 280,height:"100%" }} className='kk' columns={{xs:3}}>
+        <Grid item xs={12} md={3} >
+        <Card sx={{ maxWidth: 280,height:"100%" }} className='wish'>
         <CardMedia
         />
         <CardContent>
@@ -76,14 +64,14 @@ import './About.css'
        <Typography component="legend"></Typography>
       <Rating name="read-only" value={value} readOnly />
       </Box>
-        <Button size="small">Learn More</Button>
+        <Button size="small">More Info</Button>
         </CardActions>
         
         
         </Card>
         </Grid>
-        <Grid item>
-        <Card sx={{ maxWidth: 280,height:"100%" }} className='kk' columns={{xs:3}}>
+        <Grid item xs={12} md={3}>
+        <Card sx={{ maxWidth: 280,height:"100%" }} className='wish'>
         <CardMedia
         
         // sx={{ height: 140 }}
@@ -109,12 +97,12 @@ import './About.css'
        >
        <Typography component="legend"></Typography>
       <Rating name="read-only" value={value} readOnly />
-      </Box><Button size="small">Learn More</Button>
+      </Box><Button size="small">More Info</Button>
         </CardActions>
     </Card>
     </Grid>
-    <Grid>
-    <Card sx={{ maxWidth: 280, height:"100%" }} className='kk' columns={{xs:3}}>
+    <Grid item xs={12} md={3}>
+    <Card sx={{ maxWidth: 280, height:"100%" }} className='wish'>
     <CardMedia        title="Dr information"
     />
     <CardContent>
@@ -138,12 +126,12 @@ import './About.css'
    >
    <Typography component="legend"></Typography>
   <Rating name="read-only" value={value} readOnly />
-  </Box><Button size="small">Learn More</Button>
+  </Box><Button size="small">More Info</Button>
     </CardActions>
     </Card>
     </Grid>
-    <Grid>
-    <Card sx={{ maxWidth: 280,height:"100%" }} className='kk' columns={{xs:3}}>
+    <Grid item xs={12} md={3}>
+    <Card sx={{ maxWidth: 280,height:"100%" }} className='wish'>
     <CardMedia
     />
     <CardContent>
@@ -163,193 +151,144 @@ import './About.css'
    >
    <Typography component="legend"></Typography>
   <Rating name="read-only" value={value} readOnly />
-  </Box> <Button size="small">Learn More</Button>
+  </Box> <Button size="small">More Info</Button>
     </CardActions>
     </Card>
     </Grid>
         </Grid >
-        </Box>
         
-
-        <Box  className='hello'>
-        <div>
-        <h2>Other Specialities</h2>
-        <h4> Our Specialities - Expertise You Can Trust </h4>
-        <h5> A medical specialty is a specific area of medical practice that mainly focuses on a defined set of diseases, patients, philosophy, or skills. Examples include Paediatrics, Dermatology, Psychiatry, Gynaecology, and more. </h5>
-        <p>We provide 24/7 advanced services for a range of medical specialities, including:</p>
-        <p># Dermatology - A specialised branch of medicine that focuses on hair, nails, and skin-related disorders. Dermatology also encompasses conditions that affect the thin lining of your mouth, eyelids, and nose.</p>
-        <p># Neurology - It is a specific medical branch that focuses on diagnosing and treating nervous system disorders, which includes the brain, nerves, muscles, and blood vessels.</p>
-        <p># Endocrinology - A specific area of medicine that is related to the study of the endocrine system. The endocrine glands produce hormones that help monitor various functions in the body, including metabolism, growth, and development.</p>
-        <p># Cardiology - It is a specialty of internal medicine concerned with heart-related disorders. Cardiology focuses on detecting and treating electrophysiology, congenital heart defects, heart failure, coronary artery, valvular heart disease, and other related conditions.</p>
-        <p># Gastroenterology/GI Medicine - A specific branch of medicine that mainly focuses on the functions and diseases of the digestive tract, liver bile ducts, gallbladder, and pancreas. 
-        </p>
-        <p># COVID Consult - COVID-19 also known as novel coronavirus may trigger infections of the lower and upper respiratory tracts. If you are experiencing body ache, shortness of breath, dry cough, or fever, you must get an online consultation with the Apollo 24|7 experts.
-        </p>
-        <p># Orthopaedics - A specific branch of medicine that majorly focuses on treating injuries and diseases related to the musculoskeletal system of the body.
-        </p>
-        <p># Family Physician - A medical doctor who provides care to people of all age groups and gender. A family physician specialises in diagnosing chronic conditions, checking for signs or symptoms, providing preventative care, and referring people to specialists, if needed. 
-        </p>
-        </div>
         
         <Box >
         <div>
-        <Grid className='hi' >
-    <div> 
-    <h3>Symptoms of Difference Diseases</h3>
-    <h4> Consult Our Best Doctors for Best Treatment</h4>
-    <div>Feeling unwell? Tell us your symptoms for a quick assessment and get appropriate care.</div>
-   
+          <h2>Other Specialities</h2>
+          <h4> Our Specialities - Expertise You Can Trust </h4>
+          <h5>
+            {" "}
+            A medical specialty is a specific area of medical practice that
+            mainly focuses on a defined set of diseases, patients, philosophy,
+            or skills. Examples include Paediatrics, Dermatology, Psychiatry,
+            Gynaecology, and more.{" "}
+          </h5>
+          <p>
+            We provide 24/7 advanced services for a range of medical
+            specialities, including:
+          </p>
+          <p>
+            # Dermatology - A specialised branch of medicine that focuses on
+            hair, nails, and skin-related disorders. Dermatology also
+            encompasses conditions that affect the thin lining of your mouth,
+            eyelids, and nose.
+          </p>
+          <p>
+            # Neurology - It is a specific medical branch that focuses on
+            diagnosing and treating nervous system disorders, which includes
+            the brain, nerves, muscles, and blood vessels.
+          </p>
+          <p>
+            # Endocrinology - A specific area of medicine that is related to
+            the study of the endocrine system. The endocrine glands produce
+            hormones that help monitor various functions in the body,
+            including metabolism, growth, and development.
+          </p>
+          <p>
+            # Cardiology - It is a specialty of internal medicine concerned
+            with heart-related disorders. Cardiology focuses on detecting and
+            treating electrophysiology, congenital heart defects, heart
+            failure, coronary artery, valvular heart disease, and other
+            related conditions.
+          </p>
+          <p>
+            # Gastroenterology/GI Medicine - A specific branch of medicine
+            that mainly focuses on the functions and diseases of the digestive
+            tract, liver bile ducts, gallbladder, and pancreas.
+          </p>
+          <p>
+            # COVID Consult - COVID-19 also known as novel coronavirus may
+            trigger infections of the lower and upper respiratory tracts. If
+            you are experiencing body ache, shortness of breath, dry cough, or
+            fever, you must get an online consultation with the Apollo 24|7
+            experts.
+          </p>
+          <p>
+            # Orthopaedics - A specific branch of medicine that majorly
+            focuses on treating injuries and diseases related to the
+            musculoskeletal system of the body.
+          </p>
+          <p>
+            # Family Physician - A medical doctor who provides care to people
+            of all age groups and gender. A family physician specialises in
+            diagnosing chronic conditions, checking for signs or symptoms,
+            providing preventative care, and referring people to specialists,
+            if needed.
+          </p>
+        </div>
 
-<div className='welcome'>
-<Grid item>
-    <Button aria-describedby={id} variant='Text' type="button" onClick={handleClick} >
-    Heart Attack Symptoms
-    </Button>
-    <Popper id={id} open={open} anchorEl={anchorEl}>
-    <Box sx={{ border: 1, p: 1, bgcolor: 'Grey' }}>
-    The technical term for a heart attack is called coronary thrombosis. Clots form inside the blood vessels of the heart, thereby, blocking the blood flow and starving the heart muscles of oxygen. As a result, the tissues of the heart begin to die. There are various heart diseases identified till now, however, one of the most common causes of death is coronary thrombosis.
-
-    Based on the location of the clot, symptoms may or may not be present, but typically, these are the common warning signs:
-    <br/>
-    1 Nausea.<br/>
-    2 Sweating.<br/>
-    3 Cold sweat.<br/>
-    4 Breathlessness.<br/>
-    5 Sudden chest pain.<br/>
-    6 Shooting pain in the left hand.<br/>
-    7 Discomfort in other areas of the upper body.<br/>
-    8 Tightness/ sensation of squeezing in the chest.<br/>
-    
-    </Box>
-    </Popper>
-    
-    </Grid>
-    <Grid item>
-    <Button aria-describedby={id}  type="button" onClick={handleClick} variant="Text">
-    Low BP Symptoms
-    </Button>
-    <Popper id={id} open={open} anchorEl={anchorEl}>
-    <Box sx={{ border: 1, p: 1, bgcolor: 'Grey' }}>
-    Everyone has slightly different readings for their normal blood pressure, it primarily depends on the person’s age, lifestyle, size etc. For instance, a highly trained athlete has a considerably lower resting blood pressure when compared to a normal individual.<br/> Therefore, low bp may not be an issue until they start causing undesirable symptoms.<br/>
-    Characteristic Low BP symptoms include:
-
-    1 Dizziness<br/>
-    2 Light-headedness<br/>
-    3 Fatigue<br/>
-    4 Fading/blurred vision<br/>
-    5 Lack of concentration<br/>
-    6 Dryness of throat/ thirst<br/>
-
-    Low BP symptoms can be counteracted by following a healthier lifestyle. These include proper intake of salt, reducing alcohol, regular exercises etc.
-
-
-    </Box>
-    </Popper>
-    
-    </Grid>
-    <Button aria-describedby={id}  type="button" onClick={handleClick} variant="Text">
-
-    Fever Symptoms
-    </Button>
-    <Popper id={id} open={open} anchorEl={anchorEl}>
-    <Box sx={{ border: 1, p: 1, bgcolor: 'Grey' }}>
-    
-    A fever is a temporary increase in body temperature, typically as a result of an illness.<br/> A fever is a sign that our body cells are fighting and eliminating a number of infections from our body.<br/>
-    Sign and Symptoms of Fever<br/>
-    The most common symptoms of fever include:<br/>
-
-    1 Chills<br/>
-    2 Fatigue<br/>
-    3 Paleness<br/>
-    4 Confusions<br/>
-    5 Shivering<br/>
-    6 Seizures<br/>
-    7 Vomiting<br/>
-    </Box>
-    </Popper>
-    
-    
-    <Button aria-describedby={id}  type="button" onClick={handleClick} variant="Text">
-    Stroke Symptoms
-    </Button>
-    <Popper id={id} open={open} anchorEl={anchorEl}>
-    <Box sx={{ border: 1, p: 1, bgcolor: 'Grey' }}>
-    Stroke is a disease that has a long list of risk factors. Individuals who are suffering from heart disease, hypertension, diabetes have a higher risk of stroke.<br/> Individuals who smoke are also more prone to strokes.<br/> Common characteristic symptoms of stroke include:
-    <br/>
-    1 Sudden numbness in the face <br/>
-    2 Numbness on one side of the arms <br/>
-    3 Slurred speech <br/>
-    4 Blurred vision <br/>
-    5 Confusion <br/>
-    6 Trouble communicating with people <br/>
-    7 Sudden and severe headaches <br/>
-    8 Disorientation <br/>
-    9 Dizziness <br/>
-    10 Nausea and Vomiting <br/>
-    </Box>
-    </Popper>
-    </div>    
-    </div>
-    </Grid>
-    </div></Box>
-        
-        <Box>
-        <h4> Why to Choose Us</h4>
-        <p>
-        Benefits for choosing Us online doctor consultations:<br/>
-
-    Highly-qualified doctors are available 24x7 for you<br/>
-    Emergency medical services are available <br/>
-    Get online consultations within 15 minutes<br/>
-    Affordable rates and personalised solutions<br/>
-    Instant online consultations anytime, anywhere<br/>
-        </p>
-        </Box>
-        <footer >
-        
-        <Container >
-        <div className='foot'>
-        <Box className='fail'>
-        <div>
-        <i class="fa-regular fa-hospital"></i>
-        <p>
-        The Nightingale Pledge:<br/> A Hippocratic Oath for Nurses I solemnly pledge myself before God and in the presence of this assembly to pass my life in purity and to practice my profession faithfully. I will abstain from whatever is deleterious and mischievous and will not take or knowingly administer any harmful drug.
-        </p></div>
-        </Box>
         <Box >
-        <div className='major'>
-        <div>
-        <i className="fa-brands fa-whatsapp beta"></i>
-        </div>
-        <div >
-        <i className="fa-brands fa-instagram beta"></i>
-        </div>
-        <div >
-        <i className="fa-brands fa-facebook beta"></i>
-        </div>
-        <div  >        
-        <i className="fa-brands fa-twitter beta"></i>
-        </div>
-        <div >
-        <i className="fa-brands fa-youtube beta"></i>
-        </div>
-        <div >
-        <i className="fa-solid fa-exclamation beta"></i>
-        </div>
-        <div >
-        <i className="fa-regular fa-phone beta"></i>
-        </div>
-        </div>
+          <h4> Why to Choose Us</h4>
+          <p>
+            Benefits for choosing Us online doctor consultations:
+            <br />
+            Highly-qualified doctors are available 24x7 for you
+            <br />
+            Emergency medical services are available <br />
+            Get online consultations within 15 minutes
+            <br />
+            Affordable rates and personalised solutions
+            <br />
+            Instant online consultations anytime, anywhere
+            <br />
+          </p>
         </Box>
-        </div>
-        </Container>
-        
 
-        </footer>
+      </Box>
+      
+      <Grid container  className='hello' display={"flex"} justifyContent={"center"}>
+     
+      <Grid item md={4}>
+      
+      <div>
+      <i className="fa-regular fa-hospital"></i>
+      </div>
+      <p>
+      The Nightingale Pledge:<br/> A Hippocratic Oath for Nurses I solemnly pledge myself before God and in the presence of this assembly to pass my life in purity and to practice my profession faithfully. I will abstain from whatever is deleterious and mischievous and will not take or knowingly administer any harmful drug.
+      </p>
+      </Grid>
+      
+      <Grid item md={6}>
+      <Box  marginLeft={{lg:32}} >
+      <p>Feel free to contact us : </p>
+      </Box>
+      <Box display={"flex"} marginLeft={{lg:35 , md:10}} >
+      <div>
+      <i className="fa-brands fa-whatsapp beta"></i>
+      </div>
+      <div >
+      <i className="fa-brands fa-instagram beta"></i>
+      </div>
+      <div >
+      <i className="fa-brands fa-facebook beta"></i>
+      </div>
+      <div  >        
+      <i className="fa-brands fa-twitter beta"></i>
+      </div>
+      <div >
+      <i className="fa-brands fa-youtube beta"></i>
+      </div>
+      <div >
+      <i className="fa-solid fa-exclamation beta"></i>
+      </div>
+      <div >
+      <i className="fa-regular fa-phone beta"></i>
+      </div>
+      </Box>
+      </Grid>
+      </Grid>
+      
+      </Box>
         </Box>
-        </div>
-        </div>
+
     )
     }
 
-    export default About
+
+export default About;

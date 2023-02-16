@@ -1,24 +1,19 @@
 .foot{
-    display: flex;
+    display: grid;
     justify-content: start;
-}
+    grid-template-rows: auto;
 
-.fail{
-    height: 400px;
-    width: 500px;
-  
-  }
-  .major{
-    margin-left: 10em;
-    display: flex;
-    flex-direction: row;
-    padding-top: 40px;
-    
-    
-  }
+}
   .beta{
     font-size:25px ;
     padding: 7px;
 
 
   }
+  .wish{
+    background: radial-gradient(ellipse at top, #c6d5da, transparent),
+    radial-gradient(ellipse at bottom, #e0eff9, transparent);
+
+
+  }
+  
