@@ -124,7 +124,7 @@ function Register() {
     <Box>
       <Paper
         className="paper1"
-        elevation={6}
+        elevation={22}
         sx={{
           justifyContent: "center",
           width: { xs: "100%", md: "50%" },
@@ -137,8 +137,10 @@ function Register() {
           sx={{
             pt: "20px",
             color: "#ff5722",
-            fontFamily: "monospace",
+            fontWeight:"bolder",
+            fontFamily:"revert-layer",
             textTransform: "uppercase",
+            textShadow:"2px 2px 3px black"
           }}>
           Registration form
         </Typography>
@@ -146,6 +148,7 @@ function Register() {
         <Grid container direction={"column"} display={"flex"} spacing={2}>
           <Grid item>
             <TextField
+              className="text1"
               variant="outlined"
               label="First Name"
               sx={{ width: "60%", background: "" }}
@@ -157,6 +160,7 @@ function Register() {
           </Grid>
           <Grid item>
             <TextField
+              className="text1"
               variant="outlined"
               label="Last Name"
               sx={{ width: "60%" }}
@@ -168,6 +172,7 @@ function Register() {
           </Grid>
           <Grid item>
             <TextField
+              className="text1"
               variant="outlined"
               label="Email"
               sx={{ width: "60%" }}
@@ -181,6 +186,7 @@ function Register() {
           </Grid>
           <Grid item>
             <TextField
+              className="text1"
               variant="outlined"
               label="Address"
               multiline
@@ -194,6 +200,7 @@ function Register() {
           </Grid>
           <Grid item>
             <TextField
+              className="text1"
               variant="outlined"
               label="Contact"
               sx={{ width: "60%" }}
@@ -205,10 +212,12 @@ function Register() {
           </Grid>
           <Grid item display={"flex"} justifyContent="center" ml={5}>
             <TextField
+              
+              className="text1"
               variant="outlined"
               label="Password"
               type={types}
-              sx={{ width: "60%" }}
+              sx={{ width: "60%", }}
               value={cont.password}
               name="password"
               onChange={HandleChange}
@@ -222,6 +231,7 @@ function Register() {
           </Grid>
           <Grid item display={"flex"} justifyContent="center" ml={5}>
             <TextField
+              className="text1"
               variant="outlined"
               label="Confirm Password"
               type={types1}
@@ -239,6 +249,7 @@ function Register() {
           </Grid>
           <Grid item display={"flex"} justifyContent="space-evenly">
             <Button
+              className="text1"
               onClick={() => {
                 AddUser();
               }}
@@ -247,6 +258,7 @@ function Register() {
               Register
             </Button>
             <Button
+              className="text1"
               variant="contained"
               onClick={() => {
                 nav("/");
@@ -257,7 +269,10 @@ function Register() {
           </Grid>
           <br />
           <Typography>
-           <sup> Already Have An Account? <Link to={"/"}>Login</Link></sup>
+            <sup>
+              {" "}
+              Already Have An Account? <Link to={"/"}>Login</Link>
+            </sup>
           </Typography>
           <Grid></Grid>
         </Grid>

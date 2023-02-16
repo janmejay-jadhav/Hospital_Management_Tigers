@@ -1,4 +1,13 @@
-import { Box, Button, CardMedia, Grid, Paper, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardMedia,
+  Grid,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 import React, { useState } from "react";
@@ -9,7 +18,6 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { GradientTwoTone } from "@mui/icons-material";
-
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -90,18 +98,18 @@ function Login() {
 
   return (
     <Box>
-      <Paper
+      <Card
         className="paper12"
-        elevation={5}
+        elevation={8}
         sx={{
           justifyContent: "center",
           width: { xs: "100%", md: "50%" },
           paddingBottom: { xs: "50px" },
           marginLeft: { md: "25%" },
           paddingTop: "20px",
-          marginTop:{md:"100px"}
+          marginTop: { md: "100px" },
         }}>
-        <AccountCircleIcon sx={{ fontSize: "80px", color: "GrayText" }} />
+        <AccountCircleIcon sx={{ fontSize: "80px", color: "GrayText"}} />
         <Typography
           className="type1"
           variant="h5"
@@ -111,14 +119,15 @@ function Login() {
             color: "#ff5722",
             textTransform: "uppercase",
             fontFamily: "sans-serif",
+            fontSize: "30px",
+            textShadow:"2px 2px 3px black"
           }}>
           Login
         </Typography>
 
-        <Grid container direction={"column"} spacing={2}>
+        <Grid container direction={"column"} spacing={2} >
           <Grid item>
             <TextField
-              sx={{}}
               className="text1"
               id="username"
               label="Email"
@@ -131,6 +140,7 @@ function Login() {
 
           <Grid item display={"flex"} justifyContent="center" ml={8}>
             <TextField
+            
               className="text1"
               type={types}
               id="password"
@@ -162,7 +172,7 @@ function Login() {
             </sup>
           </Typography>
         </Grid>
-      </Paper>
+      </Card>
     </Box>
   );
 }

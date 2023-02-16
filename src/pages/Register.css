@@ -13,4 +13,8 @@
     background: rgb(243, 231, 231);
     opacity: 0.4;
   }
+  .text1{box-shadow:1px 1px 4px ;
+     border-radius:5px;
+     border-bottom:-10px;
+  }
   
