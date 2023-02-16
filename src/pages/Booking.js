@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import DeleteModal from "../components/DeleteModal";
+import "./Slots.css"
 
 function Booking() {
 
@@ -26,7 +27,7 @@ function Booking() {
   let patientDetails = ls ? JSON.parse(ls) : [];
   return (
     <>
-      <TableContainer component={Paper} sx={{ mt: 5 }}>
+      <TableContainer component={Paper} sx={{ mt: 7 }} className="table">
         <Table sx={{ minWidth: 700 }} aria-label="customized table">
           <TableHead>
             <TableRow>

@@ -15,7 +15,9 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { blue } from "@mui/material/colors";
 import React, { useEffect, useState } from "react";
+import "./Slots.css";
 
 const plans = [
   "CBC TEST",
@@ -171,8 +173,9 @@ function BookSlots() {
           padding: { xs: 5, md: 10 },
           margin: { md: "7% auto" },
         }}
+        className="slot"
       >
-        <Typography variant="h4" color="blueviolet" fontWeight={900} mb={5}>
+        <Typography variant="h3" color="#0277bd" sx={{textShadow:"2px 2px 5px black"}} fontWeight={900} mt={3} mb={6}>
           Book Appointment
         </Typography>
         <Grid container spacing={2} justifyContent="space-around">
@@ -190,7 +193,7 @@ function BookSlots() {
           </Grid>
           <Grid
             item
-            display={{xs:"block", md: "flex" }}
+            display={{ xs: "block", md: "flex" }}
             alignItems="center"
             justifyContent="space-around"
             xs={8}
@@ -271,8 +274,8 @@ function BookSlots() {
           <Grid
             item
             xs={8}
-            display={{xs:"block", md: "flex" }}
-            justifyContent={{xs:"space-between", md: "space-around" }}
+            display={{ xs: "block", md: "flex" }}
+            justifyContent={{ xs: "space-between", md: "space-around" }}
           >
             <Button
               variant="contained"
