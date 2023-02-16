@@ -37,12 +37,11 @@
   }
 }
 .jss{
-  background: radial-gradient(ellipse at top, #0345a3, transparent),
-  radial-gradient(ellipse at bottom, #b62df5, transparent);
+  background-image: url("C:\Users\USER\Desktop\Hospital_Management_Tigers\public\Img\insurance-1991276_1280.jpg");
   color: black;
 font-size: 20px;
 font-weight: 300;
-line-height: 60px;
+line-height: 100px;
 text-transform:capitalize;
 
 
@@ -50,14 +49,14 @@ text-transform:capitalize;
 
 }
 .happy{
-  background: radial-gradient(ellipse at top, #009297, transparent),
-            radial-gradient(ellipse at bottom, #a828f8, transparent);
+  background: radial-gradient(ellipse at top, #1f9a9e, transparent),
+            radial-gradient(ellipse at bottom, #ccb0dd, transparent);
 }
 .hello{
   
   margin-top: 2em;
-   background: radial-gradient(ellipse at top, #5285b7, transparent),
-            radial-gradient(ellipse at bottom, #c143ae, transparent);
+   background: radial-gradient(ellipse at top, #a0c5ea, transparent),
+            radial-gradient(ellipse at bottom, #f7bbee, transparent);
 }
 .tom{
   margin-left: 0.8em;
