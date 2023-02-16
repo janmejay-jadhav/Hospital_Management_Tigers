@@ -8,6 +8,7 @@ import { eyeBlocked } from "react-icons-kit/icomoon/eyeBlocked";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { GradientTwoTone } from "@mui/icons-material";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -35,7 +36,9 @@ function Login() {
   const handleSubmit = () => {
     let local = JSON.parse(localStorage.getItem("Users"));
     local.map((value, index) => {
-      if (value.email === username && value.password === password) {
+      if (username === "" || password === "") {
+        alert("Field should not be empty");
+      } else if (value.email === username && value.password === password) {
         alert("Login Successful!!");
         let token = value;
         localStorage.setItem("token", JSON.stringify(token));
@@ -95,15 +98,16 @@ function Login() {
           marginTop: "100px",
           paddingTop: "20px",
         }}>
-        <AccountCircleIcon sx={{ fontSize: "50px" }} />
+        <AccountCircleIcon sx={{ fontSize: "80px", color: "GrayText" }} />
         <Typography
-          variant="h4"
+          className="type1"
+          variant="h5"
           fontWeight={"bolder"}
           sx={{
             mb: "10px",
             color: "#ff5722",
-            fontFamily: "monospace",
             textTransform: "uppercase",
+            fontFamily:"sans-serif"
           }}>
           Login
         </Typography>
@@ -112,7 +116,7 @@ function Login() {
           <Grid item>
             <TextField
               sx={{}}
-              // className={classes.field}
+              className="text1"
               id="username"
               label="Email"
               value={username}
@@ -124,7 +128,7 @@ function Login() {
 
           <Grid item display={"flex"} justifyContent="center" ml={8}>
             <TextField
-              // className={classes.field}
+              className="text1"
               type={types}
               id="password"
               label="Password"
@@ -150,7 +154,7 @@ function Login() {
           </Grid>
           <br />
           <Typography>
-            Are you New Member? Click <Link to={"/register"}>Register</Link>
+            <sup>Are you New Member? Click <Link to={"/register"}>Register</Link></sup>
           </Typography>
         </Grid>
       </Paper>

@@ -58,28 +58,25 @@ function Register() {
   });
 
   let AddUser = () => {
-    if (cont.fname===""||
-    cont.lname===""||
-    cont.email===""||
-    cont.address===""||
-    cont.contact===""||
-    cont.password===""||
-    cont.ReConfirm=== "") {
-      alert("All field should not be empty")
-      
-    }else if (emails.includes(cont.email)) {
+    if (
+      cont.fname === "" ||
+      cont.lname === "" ||
+      cont.email === "" ||
+      cont.address === "" ||
+      cont.contact === "" ||
+      cont.password === "" ||
+      cont.ReConfirm === ""
+    ) {
+      alert("All field should not be empty");
+    } else if (emails.includes(cont.email)) {
       alert("Email already exists!!");
     } else {
       table.push(cont);
       localStorage.setItem("Users", JSON.stringify(table));
       alert("Registered Successfully!!");
-           nav("/");
+      nav("/");
     }
-
-
   };
-
-
 
   const validatePassword = (password, confirmPassword) => {
     if (password.length < 8) {
@@ -138,7 +135,6 @@ function Register() {
         <Typography
           variant="h4"
           sx={{
-            fontWeight: "bolder",
             pt: "20px",
             color: "#ff5722",
             fontFamily: "monospace",
@@ -245,7 +241,6 @@ function Register() {
             <Button
               onClick={() => {
                 AddUser();
-               
               }}
               variant="contained"
               sx={{ backgroundColor: "#3f51b5" }}>
@@ -262,7 +257,7 @@ function Register() {
           </Grid>
           <br />
           <Typography>
-            Already Have An Account? <Link to={"/"}>Login</Link>
+           <sup> Already Have An Account? <Link to={"/"}>Login</Link></sup>
           </Typography>
           <Grid></Grid>
         </Grid>
