@@ -53,7 +53,7 @@ function Usertab() {
   };
 //  
   return (
-    <Box marginTop={20}>
+    <Box marginTop={10}>
       <TableContainer component={Paper} style={tablestyle} elevation={22} sx={12}>
         <Table >
           <TableHead>
