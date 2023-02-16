@@ -43,7 +43,6 @@ function BookSlots() {
     modeOfPayment: "",
   });
 
-  console.log(patient);
   //error useStates
   const [nameError, setNameError] = useState({ state: false, message: "" });
   const [genderError, setGenderError] = useState({ state: false, message: "" });
@@ -173,7 +172,7 @@ function BookSlots() {
           margin: { md: "7% auto" },
         }}
       >
-        <Typography variant="h4" color="greenyellow" fontWeight={900} mb={5}>
+        <Typography variant="h4" color="blueviolet" fontWeight={900} mb={5}>
           Book Appointment
         </Typography>
         <Grid container spacing={2} justifyContent="space-around">
@@ -182,7 +181,7 @@ function BookSlots() {
               fullWidth
               label="Full Name"
               name="name"
-              value={patient.name}
+              value={patient.name.toLowerCase()}
               onChange={handleOnChange}
               onKeyUp={handleNameError}
               error={nameError.state}

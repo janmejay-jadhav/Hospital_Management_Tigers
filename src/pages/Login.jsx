@@ -34,10 +34,9 @@ function Login() {
     }
   };
 
-  let nav=useNavigate();
+  let nav = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     let local = JSON.parse(localStorage.getItem("Users"));
     local.map((value, index) => {
       if (value.email === username && value.password === password) {
@@ -52,61 +51,74 @@ function Login() {
   };
 
   return (
-    <Box sx={{backgroundImage:""}}>
-    <Paper
-      elevation={5}
-      sx={{
-        justifyContent: "center",
-        width: { xs: "100%", md: "40rem" },
-        paddingBottom: "30px",
-        marginLeft: { md: "25%" },
-        marginTop: "100px",
-        paddingTop: "20px",
-        // backgroundColor: "",
-        
-      }}>
-      <Typography variant="h4" fontWeight={"bolder"} sx={{ mb: "40px", color:"#ff5722", fontFamily:"monospace",textTransform:"uppercase" }}>
-        Login
-      </Typography>
+    <Box sx={{ backgroundImage: "" }}>
+      <Paper
+        elevation={5}
+        sx={{
+          justifyContent: "center",
+          width: { xs: "100%", md: "40rem" },
+          paddingBottom: "30px",
+          marginLeft: { md: "25%" },
+          marginTop: "100px",
+          paddingTop: "20px",
+          // backgroundColor: "",
+        }}
+      >
+        <Typography
+          variant="h4"
+          fontWeight={"bolder"}
+          sx={{
+            mb: "40px",
+            color: "#ff5722",
+            fontFamily: "monospace",
+            textTransform: "uppercase",
+          }}
+        >
+          Login
+        </Typography>
 
-      <Grid container direction={"column"} spacing={3}>
-        <Grid item >
-          <TextField
-            className={classes.field}
-            id="username"
-            label="Email"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Grid>
+        <Grid container direction={"column"} spacing={3}>
+          <Grid item>
+            <TextField
+              className={classes.field}
+              id="username"
+              label="Email"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </Grid>
 
-        <Grid item  display={"flex"} justifyContent="center" ml={8}>
-          <TextField
-            className={classes.field}
-            type={types}
-            id="password"
-            label="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-           
-          ></TextField>
-          <Button size="small" onClick={HandleToggle}>
-          <Icon icon={icon} size={20}></Icon>
-        </Button>
-          
-        </Grid>
+          <Grid item display={"flex"} justifyContent="center" ml={8}>
+            <TextField
+              className={classes.field}
+              type={types}
+              id="password"
+              label="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></TextField>
+            <Button size="small" onClick={HandleToggle}>
+              <Icon icon={icon} size={20}></Icon>
+            </Button>
+          </Grid>
 
-        <Grid item xs={12}>
-          <Button variant="contained" color="primary" onClick={()=>{handleSubmit()}} >
-            Login
-          </Button>
-        </Grid>
-        <br />
-        <Typography>
+          <Grid item xs={12}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                handleSubmit();
+              }}
+            >
+              Login
+            </Button>
+          </Grid>
+          <br />
+          <Typography>
             Are you New Member? Click <Link to={"/register"}>Register</Link>
           </Typography>
-      </Grid>
-    </Paper>
+        </Grid>
+      </Paper>
     </Box>
   );
 }
