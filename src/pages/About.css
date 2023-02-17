@@ -1,0 +1,21 @@
+.foot{
+    display: grid;
+    justify-content: start;
+    grid-template-rows: auto;
+
+}
+
+
+  .beta{
+    font-size:25px ;
+    padding: 7px;
+
+
+  }
+  .wish{
+    background: radial-gradient(ellipse at top, #c6d5da, transparent),
+    radial-gradient(ellipse at bottom, #d3ecfe, transparent);
+
+
+  }
+  
