@@ -5,3 +5,28 @@
 .m{
     color: white;
 }
+.font{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.mycolor
+{
+    background-color:#c3c7c9
+    !important;
+  height: 100vh;
+}
+
+.sidebar{
+    background-image: url('../../public/Img/luke-chesser-3rWagdKBF7U-unsplash.jpg');
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.appbar{
+    background-image: url('../../public/Img/nick-fewings-31BdSamS8v4-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

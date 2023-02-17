@@ -52,12 +52,12 @@ function Login() {
           alert("Login Successful!!");
           let token = value;
           localStorage.setItem("token", JSON.stringify(token));
-        } else {
-          alert("Email or Password is Invalid");
         }
       });
       if (localStorage.getItem("token")) {
         nav("/sidebar");
+      } else {
+        alert("Email or Password is Invalid");
       }
     }
   };
@@ -103,9 +103,9 @@ function Login() {
         elevation={8}
         sx={{
           justifyContent: "center",
-          width: { xs: "100%", md: "50%" },
+          width: { xs: "100%", md: "25%" },
           paddingBottom: { xs: "50px" },
-          marginLeft: { md: "25%" },
+          marginLeft: { md: "40%" },
           paddingTop: "20px",
           marginTop: { md: "100px",xs:"100px" },
         }}>
@@ -120,12 +120,13 @@ function Login() {
             textTransform: "uppercase",
             fontFamily: "sans-serif",
             fontSize: "30px",
-            textShadow:"2px 2px 3px black"
-          }}>
+            textShadow: "2px 2px 3px black",
+          }}
+        >
           Login
         </Typography>
 
-        <Grid container direction={"column"} spacing={2} >
+        <Grid container direction={"column"} spacing={2}>
           <Grid item>
             <TextField
               className="text1"
@@ -140,7 +141,6 @@ function Login() {
 
           <Grid item display={"flex"} justifyContent="center" ml={8}>
             <TextField
-            
               className="text1"
               type={types}
               id="password"
@@ -161,7 +161,8 @@ function Login() {
               color="primary"
               onClick={() => {
                 handleSubmit();
-              }}>
+              }}
+            >
               Login
             </Button>
           </Grid>
