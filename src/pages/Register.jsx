@@ -49,7 +49,7 @@ function Register() {
     ReConfirm: "",
   });
 
-  let users = JSON.parse(localStorage.getItem("Users"))
+  let users = JSON.parse(localStorage.getItem("Users"))||[]
     ? JSON.parse(localStorage.getItem("Users"))
     : [];
   let emails = [];

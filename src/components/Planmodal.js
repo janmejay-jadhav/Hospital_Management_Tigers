@@ -35,11 +35,11 @@ function Planmodal({ open, setOpen, plans }) {
       [name]: value,
     });
   };
-  let modalinput = JSON.parse(localStorage.getItem("modalinput")) || [];
+  let modalinput = JSON.parse(localStorage.getItem("admindata")) || [];
 
   let handleSubmit = () => {
     modalinput.push(input);
-    localStorage.setItem("modalinput", JSON.stringify(modalinput));
+    localStorage.setItem("admindata", JSON.stringify(modalinput));
     handleClose();
   };
 

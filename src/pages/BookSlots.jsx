@@ -53,7 +53,7 @@ function BookSlots() {
   const [mopError, setMopError] = useState({ state: false, message: "" });
 
   // slot booking handler
-  let admin = JSON.parse(localStorage.getItem("admindata"));
+  let admin = JSON.parse(localStorage.getItem("admindata")) || [];
   let slotHandler = () => {
     patient.plan.map((plans) => {
       admin.map((slots) => {
@@ -175,7 +175,14 @@ function BookSlots() {
         }}
         className="slot"
       >
-        <Typography variant="h3" color="#0277bd" sx={{textShadow:"2px 2px 5px black"}} fontWeight={900} mt={3} mb={6}>
+        <Typography
+          variant="h3"
+          color="#0277bd"
+          sx={{ textShadow: "2px 2px 5px black" }}
+          fontWeight={900}
+          mt={3}
+          mb={6}
+        >
           Book Appointment
         </Typography>
         <Grid container spacing={2} justifyContent="space-around">
@@ -236,13 +243,13 @@ function BookSlots() {
                 onChange={handleChange}
                 input={<OutlinedInput label="Select Test" />}
               >
-                {plans.map((plan, index) => (
+                {admin.map((plan, index) => (
                   <MenuItem
                     disabled={admin[index].slots <= 0 ? true : false}
-                    key={plan}
-                    value={plan}
+                    key={plan.name}
+                    value={plan.name}
                   >
-                    {plan}
+                    {plan.name}
                   </MenuItem>
                 ))}
               </Select>

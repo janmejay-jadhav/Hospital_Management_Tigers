@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "@mui/material";
 import React, { useEffect } from "react";
+import "./Slots.css"
 
 function Usertab() {
     
@@ -45,16 +46,14 @@ function Usertab() {
       contact: 9182736455,
     },
   ];
-  let tablestyle = {
-    backgroundColor: "skyblue",
-  };
+ 
   let headerstyle = {
     color: "blue",
   };
 //  
   return (
     <Box marginTop={10}>
-      <TableContainer component={Paper} style={tablestyle} elevation={22} sx={12}>
+      <TableContainer component={Paper} className="table" elevation={22} sx={12}>
         <Table >
           <TableHead>
             <TableRow>

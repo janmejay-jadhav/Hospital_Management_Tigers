@@ -44,7 +44,7 @@
         <CardMedia
         />
         <CardContent>
-        <img src='assets/dr1.png' className='im'></img>
+        <img src='assets/dr1.png' alt='assets' className='im'></img>
         <Typography gutterBottom variant="h5" component="div">
             Dermatology
         </Typography>
@@ -78,7 +78,7 @@
         title="Dr information"
         />
         <CardContent>
-        <img src='assets/about-doctor-bg.jpg' className='im'></img>
+        <img src='assets/about-doctor-bg.jpg' alt='doctor' className='im'></img>
         <Typography gutterBottom variant="h5" component="div">
         General Physician
         </Typography>
@@ -106,7 +106,7 @@
     <CardMedia        title="Dr information"
     />
     <CardContent>
-    <img src='assets/R.jpg' className='im'></img>
+    <img src='assets/R.jpg' alt='assets' className='im'></img>
         
         <Typography gutterBottom variant="h5" component="div">
         Paediatrics
@@ -135,7 +135,7 @@
     <CardMedia
     />
     <CardContent>
-    <img src='assets/doctor.jpg' className='im' width={'200px'} height={'300px'}></img>
+    <img src='assets/doctor.jpg' alt='assets' className='im' width={'200px'} height={'300px'}></img>
     <Typography gutterBottom variant="h5" component="div">
     Recommended Doctors
     </Typography>
