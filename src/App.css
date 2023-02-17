@@ -37,12 +37,16 @@
   }
 }
 .jss{
-  background-image: url("C:\Users\USER\Desktop\Hospital_Management_Tigers\public\Img\insurance-1991276_1280.jpg");
+  background-image: url("../public/Img/insurance-1991276_1280.jpg");
   color: black;
 font-size: 20px;
 font-weight: 300;
 line-height: 100px;
 text-transform:capitalize;
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+text-shadow: 2px 2px 5px rgb(251, 212, 212);
 
 
 
