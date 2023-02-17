@@ -65,6 +65,13 @@ let cardstyle = {
 function PlansPrice() {
   const [open, setOpen] = useState(false);
   const [first, setfirst] = useState(false);
+
+  
+  if(localStorage.getItem("admindata")===null)
+  {
+    localStorage.setItem("admindata", JSON.stringify(plans));
+  }
+  
   let newtest = JSON.parse(localStorage.getItem("admindata")) || [];
 
   let token = JSON.parse(localStorage.getItem("token"))
@@ -78,9 +85,6 @@ function PlansPrice() {
       setfirst(!first);
     }
   };
-  // useEffect(() => {
-  //   localStorage.setItem("admindata", JSON.stringify(plans));
-  // }, []);
   return (
     <Box marginTop={8}>
      {token.email==="admin@gmail.com"&& <Button
