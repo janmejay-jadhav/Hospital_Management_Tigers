@@ -40,8 +40,7 @@ function Planmodal({ open, setOpen, plans }) {
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+        aria-describedby="modal-modal-description">
         <Box sx={style}>
           <Typography variant="h5">ADD PLANS AND PRICE</Typography>
           <TextField

@@ -37,7 +37,7 @@ function Login() {
   let nav=useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    
     let local = JSON.parse(localStorage.getItem("Users"));
     local.map((value, index) => {
       if (value.email === username && value.password === password) {

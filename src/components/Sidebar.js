@@ -40,8 +40,19 @@ function ResponsiveDrawer(props) {
   const history = useNavigate();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileClose, setMobileClose] = React.useState(true);
   const [menudata, setMenudata] = React.useState("About");
-
+  let ls=JSON.parse(localStorage.getItem("token"));
+  let token = ls?ls: {fname:"",lname:""}
+ React.useEffect(() => {
+   if(!ls)
+   {
+       history("/")
+   }
+ 
+   
+ }, [])
+ 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -50,21 +61,17 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div>
       <Container>
-        <Toolbar>
-          <Typography variant='h4' component='h1' className='font'  >
-            MY-3 CLINIC
-          </Typography>
-        </Toolbar>
-      {/* <CardMedia
-        sx={{ height: 55}}
-        image="./img/pharmacy-g0150676b6_1920.jpg"
+      <CardMedia
+        sx={{ height: 95}}
+        image="./img/hospital-logo.webp"
         title="green iguana"
         alt="error"
-      /> */}
+      />
+     
       <Divider />
       <List>
         
-          <ListItem  disablePadding onClick={()=>setMenudata("About")}>
+          <ListItem  disablePadding onClick={()=>{setMenudata("About");handleDrawerToggle()}}>
             <ListItemButton>
               <ListItemIcon>
                  < InfoIcon/> 
@@ -72,7 +79,7 @@ function ResponsiveDrawer(props) {
               <ListItemText primary="About" />
             </ListItemButton>
           </ListItem>
-          <ListItem  disablePadding onClick={()=>setMenudata("Plans & Price")}>
+          <ListItem  disablePadding onClick={()=>{setMenudata("Plans & Price");handleDrawerToggle()}}>
             <ListItemButton>
               <ListItemIcon>
                  < MonetizationOnIcon/> 
@@ -80,7 +87,7 @@ function ResponsiveDrawer(props) {
               <ListItemText primary="Plans & Price"  />
             </ListItemButton>
           </ListItem>
-          <ListItem  disablePadding onClick={()=>setMenudata("Book Slots")}>
+          <ListItem  disablePadding onClick={()=>{setMenudata("Book Slots");handleDrawerToggle()}}>
             <ListItemButton>
               <ListItemIcon>
                  < BookOnlineIcon/> 
@@ -88,7 +95,7 @@ function ResponsiveDrawer(props) {
               <ListItemText primary="Book Slots" />
             </ListItemButton>
           </ListItem>
-          <ListItem  disablePadding onClick={()=>setMenudata("Users")}>
+          <ListItem  disablePadding onClick={()=>{setMenudata("Users");handleDrawerToggle()}}>
             <ListItemButton>
               <ListItemIcon>
                  < AccountCircleIcon/> 
@@ -96,7 +103,7 @@ function ResponsiveDrawer(props) {
               <ListItemText primary="Users" />
             </ListItemButton>
           </ListItem>
-          <ListItem  disablePadding onClick={()=>setMenudata("Bookings")}>
+          <ListItem  disablePadding onClick={()=>{setMenudata("Bookings");handleDrawerToggle()}}>
             <ListItemButton>
               <ListItemIcon>
                  < CalendarMonthIcon/> 
@@ -104,7 +111,7 @@ function ResponsiveDrawer(props) {
               <ListItemText primary="Bookings" />
             </ListItemButton>
           </ListItem>
-          <ListItem  disablePadding onClick={()=>{history("/");localStorage.removeItem("token")}}>
+          <ListItem  disablePadding onClick={()=>{history("/");localStorage.removeItem("token");handleDrawerToggle()}}>
             <ListItemButton>
               <ListItemIcon>
                  < LogoutIcon/> 
@@ -118,7 +125,7 @@ function ResponsiveDrawer(props) {
       <Divider />
       
       <CardMedia
-        sx={{ height: 160}}
+        sx={{ height: 153}}
         image="./img/analysis-gdb1f695c1_1920.jpg"
         title="green iguana"
         alt="error"
@@ -130,7 +137,7 @@ function ResponsiveDrawer(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
-let ls=JSON.parse(localStorage.getItem("token"));
+
 
 
   return (
@@ -156,7 +163,7 @@ let ls=JSON.parse(localStorage.getItem("token"));
           <Typography variant="h6" noWrap component="div" className='m'>
           <Box sx={{ display: 'flex', alignItems: 'flex-end',color:'white'}}>
         <AccountCircle sx={{ color: 'white', mr: 1, my: 0.5 }} />
-       {ls.fname+" "+ls.lname}
+       {token.fname+" "+token.lname}
            </Box>
             </Typography>
             </Toolbar>
@@ -171,7 +178,7 @@ let ls=JSON.parse(localStorage.getItem("token"));
           container={container}
           variant="temporary"
           open={mobileOpen}
-          onClose={handleDrawerToggle}
+          
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}

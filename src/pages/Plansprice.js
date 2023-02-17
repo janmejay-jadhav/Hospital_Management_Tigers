@@ -61,9 +61,9 @@ let cardstyle = {
 function PlansPrice() {
   const [open, setOpen] = useState(false);
 
-  // useEffect(() => {
-  //   localStorage.setItem("admindata", JSON.stringify(plans));
-  // }, []);
+  useEffect(() => {
+    localStorage.setItem("admindata", JSON.stringify(plans));
+  }, []);
   return (
     <Box marginTop={20}>
       <Button
