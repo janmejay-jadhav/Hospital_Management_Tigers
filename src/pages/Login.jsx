@@ -107,7 +107,7 @@ function Login() {
           paddingBottom: { xs: "50px" },
           marginLeft: { md: "25%" },
           paddingTop: "20px",
-          marginTop: { md: "100px" },
+          marginTop: { md: "100px",xs:"100px" },
         }}>
         <AccountCircleIcon sx={{ fontSize: "80px", color: "GrayText"}} />
         <Typography
