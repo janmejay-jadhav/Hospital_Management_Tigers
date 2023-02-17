@@ -17,6 +17,7 @@ import { blue } from "@mui/material/colors";
 import { fontWeight } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import Planmodal from "../components/Planmodal";
+import "./About.css"
 
 const plans = [
   {
@@ -66,6 +67,8 @@ function PlansPrice() {
   const [first, setfirst] = useState(false);
   let newtest = JSON.parse(localStorage.getItem("admindata")) || [];
 
+  let token = JSON.parse(localStorage.getItem("token"))
+
   //delte test handler
   let deleteTest = (index) => {
     let confirm = window.confirm("Do You Really Want to Delete Test ?");
@@ -80,7 +83,7 @@ function PlansPrice() {
   // }, []);
   return (
     <Box marginTop={8}>
-      <Button
+     {token.email==="admin@gmail.com"&& <Button
         variant="contained"
         style={{ backgroundColor: "green" }}
         onClick={() => {
@@ -88,13 +91,13 @@ function PlansPrice() {
         }}
       >
         {" "}
-        ADD PLAN
-      </Button>
-      <Grid mt={4} container spacing={8} rowSpacing={1}>
+        ADD TEST
+      </Button>}
+      <Grid mt={4} container spacing={3} rowSpacing={5}>
         {newtest.map((plan, index) => (
           <Grid item xs={12} md={6} lg={4} key={index}>
             <Card
-              className="memo"
+            className="card"
               sx={{
                 minWidth: 275,
                 display: {xs:"block"},
@@ -104,7 +107,7 @@ function PlansPrice() {
               }}
             >
             <Box display={{xs:"block",md:"flex"}} alignItems={"center"}>
-              <CardContent sx={{textAlign: "left" }}>
+              <CardContent sx={{textAlign: "left",borderRight:"2px solid green" }}>
                 <Typography>Test: {plan.name}</Typography>
                 <Typography>Price : {plan.price}</Typography>
                 <Typography>Doctor : {plan.doctorName}</Typography>
@@ -118,7 +121,7 @@ function PlansPrice() {
                 />
               </CardMedia>
               </Box>
-              <CardActions sx={{display:"flex", justifyContent:"center"}}>
+              {token.email==="admin@gmail.com"&& <CardActions sx={{display:"flex", justifyContent:"center"}}>
               <Button
                 variant="text"
                 size="small"
@@ -132,7 +135,7 @@ function PlansPrice() {
               >
                 <DeleteForever />
               </Button>
-              </CardActions>
+              </CardActions>}
             </Card>
           </Grid>
         ))}

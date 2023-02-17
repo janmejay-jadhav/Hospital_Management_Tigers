@@ -37,25 +37,20 @@
   }
 }
 
-.jss{
-  background-image: url("../public/Img/insurance-1991276_1280.jpg");
+.jss {
+  background-image: url("../public/Img/karim-ghantous-8ztH-7lj8ag-unsplash.jpg");
   color: black;
   font-size: 20px;
   font-weight: 300;
   line-height: 100px;
   text-transform: capitalize;
-font-size: 20px;
-font-weight: 300;
-line-height: 100px;
-text-transform:capitalize;
-background-position: center;
-background-size: cover;
-background-attachment: fixed;
-text-shadow: 2px 2px 5px rgb(251, 212, 212);
-
-
-
-
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 100px;
+  text-transform: capitalize;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .happy {
   background: radial-gradient(ellipse at top, #1f9a9e, transparent),
@@ -78,4 +73,21 @@ text-shadow: 2px 2px 5px rgb(251, 212, 212);
 .im {
   max-height: 200px;
   padding-left: 10px;
+}
+.modal {
+  background-image: url("../public/Img/fabrizio-conti-aExT3y92x5o-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+.textfield{
+  border-radius: 4px;
+  box-shadow: 0px 0px 3px black;
+
+}
+
+::placeholder{
+  font-weight: bolder;
+  color: black;
 }

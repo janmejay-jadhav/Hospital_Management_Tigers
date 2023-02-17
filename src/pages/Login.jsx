@@ -103,11 +103,12 @@ function Login() {
         elevation={8}
         sx={{
           justifyContent: "center",
-          width: { xs: "100%", md: "50%" },
+          width: { xs: "100%", md: "25%" },
           paddingBottom: { xs: "50px" },
-          marginLeft: { md: "25%" },
+          marginLeft: { md: "40%" },
           paddingTop: "20px",
           marginTop: { md: "100px" },
+          borderRadius:5
         }}
       >
         <AccountCircleIcon sx={{ fontSize: "80px", color: "GrayText" }} />

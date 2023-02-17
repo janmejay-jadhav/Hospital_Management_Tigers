@@ -3,6 +3,7 @@ import { alignProperty } from "@mui/material/styles/cssUtils";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { json } from "react-router";
+import "../App.css";
 
 const style = {
   position: "absolute",
@@ -15,7 +16,7 @@ const style = {
   p: 4,
 
   textAlign: "center",
-  backgroundColor: "#e1f5fe",
+
 };
 
 function Planmodal({ open, setOpen, plans }) {
@@ -44,24 +45,27 @@ function Planmodal({ open, setOpen, plans }) {
   };
 
   return (
-    <div>
+    <div >
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description">
-        <Box sx={style}>
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style} className="modal">
           <Typography variant="h5" color="black">
             ADD PLANS AND PRICE
           </Typography>
           <TextField
+          className="textfield"
             onChange={handleiputchange}
             value={input.name}
             name="name"
-            placeholder={" TEST NAME"}
+            placeholder={"TEST NAME"}
             sx={{ m: 2 }}
           ></TextField>
           <TextField
+          className="textfield"
             onChange={handleiputchange}
             value={input.price}
             name="price"
@@ -70,6 +74,7 @@ function Planmodal({ open, setOpen, plans }) {
             sx={{ m: 2 }}
           ></TextField>
           <TextField
+          className="textfield"
             onChange={handleiputchange}
             value={input.doctorName}
             name="doctorName"
@@ -77,6 +82,7 @@ function Planmodal({ open, setOpen, plans }) {
             sx={{ m: 2 }}
           ></TextField>
           <TextField
+          className="textfield"
             onChange={handleiputchange}
             value={input.slots}
             name="slots"

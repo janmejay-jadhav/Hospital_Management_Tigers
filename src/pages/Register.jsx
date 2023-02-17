@@ -127,10 +127,11 @@ function Register() {
         elevation={22}
         sx={{
           justifyContent: "center",
-          width: { xs: "100%", md: "50%" },
+          width: { xs: "100%", md: "35%" },
           paddingBottom: "50px",
-          marginLeft: { md: "25%" },
+          marginLeft: { md: "35%" },
           marginTop: "20px",
+          borderRadius:10
         }}>
         <Typography
           variant="h4"
