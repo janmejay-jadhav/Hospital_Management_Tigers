@@ -36,13 +36,26 @@
     transform: rotate(360deg);
   }
 }
-.jss {
+
+.jss{
   background-image: url("../public/Img/insurance-1991276_1280.jpg");
   color: black;
   font-size: 20px;
   font-weight: 300;
   line-height: 100px;
   text-transform: capitalize;
+font-size: 20px;
+font-weight: 300;
+line-height: 100px;
+text-transform:capitalize;
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+text-shadow: 2px 2px 5px rgb(251, 212, 212);
+
+
+
+
 }
 .happy {
   background: radial-gradient(ellipse at top, #1f9a9e, transparent),
