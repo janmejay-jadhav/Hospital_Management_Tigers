@@ -5,3 +5,13 @@
 .m{
     color: white;
 }
+.font{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.mycolor
+{
+    background-color:#c3c7c9
+    !important;
+  height: 100vh;
+}
