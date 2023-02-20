@@ -36,40 +36,58 @@
     transform: rotate(360deg);
   }
 }
-.jss{
-  background-image: url("../public/Img/insurance-1991276_1280.jpg");
+
+.jss {
+  background-image: url("../public/Img/karim-ghantous-8ztH-7lj8ag-unsplash.jpg");
   color: black;
-font-size: 20px;
-font-weight: 300;
-line-height: 100px;
-text-transform:capitalize;
-
-
-
-
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 100px;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 100px;
+  text-transform: capitalize;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
-.happy{
+.happy {
   background: radial-gradient(ellipse at top, #1f9a9e, transparent),
-            radial-gradient(ellipse at bottom, #ccb0dd, transparent);
+    radial-gradient(ellipse at bottom, #ccb0dd, transparent);
 }
-.hello{
-  
+.hello {
   margin-top: 2em;
-   background: radial-gradient(ellipse at top, #a0c5ea, transparent),
-            radial-gradient(ellipse at bottom, #f7bbee, transparent);
+  background: radial-gradient(ellipse at top, #a0c5ea, transparent),
+    radial-gradient(ellipse at bottom, #f7bbee, transparent);
 }
-.tom{
+.tom {
   margin-left: 0.8em;
 }
-.welcome{
+.welcome {
   display: flex;
   color: rgb(55, 250, 152);
   margin-top: 2em;
   margin-left: 20em;
 }
-.im{
-max-height: 200px;
-padding-left: 10px;
+.im {
+  max-height: 200px;
+  padding-left: 10px;
+}
+.modal {
+  background-image: url("../public/Img/fabrizio-conti-aExT3y92x5o-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
 }
 
+.textfield{
+  border-radius: 4px;
+  box-shadow: 0px 0px 3px black;
 
+}
+
+::placeholder{
+  font-weight: bolder;
+  color: black;
+}
