@@ -1,4 +1,4 @@
-.App {
+  .App {
   text-align: center;
 }
 
@@ -36,9 +36,8 @@
     transform: rotate(360deg);
   }
 }
-<<<<<<< HEAD
 .jss{
-  background-image: url("C:\Users\USER\Desktop\Hospital_Management_Tigers\public\Img\insurance-1991276_1280.jpg");
+  background-image: url("../public/Img/insurance-1991276_1280.jpg");
   color: black;
 font-size: 20px;
 font-weight: 300;
@@ -63,51 +62,14 @@ text-transform:capitalize;
   margin-left: 0.8em;
 }
 .welcome{
-=======
-.jss {
-  background-color: rgb(30, 104, 168);
-  color: black;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 60px;
-  text-transform: capitalize;
-  margin: 0 0 20px;
-}
-.happy {
-  background-color: cadetblue;
-}
-.hello {
-  display: block;
-  flex-flow: row;
-  margin-top: 22em;
-}
-
-.welcome {
->>>>>>> 7bdd01f9f94c094fb2999ea2b3eb84b72bd2b86d
   display: flex;
   color: rgb(55, 250, 152);
   margin-top: 2em;
   margin-left: 20em;
 }
-<<<<<<< HEAD
 .im{
 max-height: 200px;
 padding-left: 10px;
 }
 
 
-=======
-.im {
-  max-height: 200px;
-  padding-left: 55px;
-}
-.kk {
-  background-color: red;
-}
-
-.memo {
-  background: radial-gradient(ellipse at top, #b9a6f8, transparent),
-    radial-gradient(ellipse at bottom, #23a8a8, transparent);
-  /* background-image: url("https://lh3.googleusercontent.com/ofIVk6XBnKsFxzIAcsp9qGkw8wyrMwVuhBecT49TR9OuCDkYjhThwJuXieYvJ_UdkCPSWh6p0MfA-cCQ2Jt0Ozi3jZ4=w640-h400-e365-rj-sc0x00ffffff"); */
-}
->>>>>>> 7bdd01f9f94c094fb2999ea2b3eb84b72bd2b86d

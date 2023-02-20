@@ -40,7 +40,7 @@ function ResponsiveDrawer(props) {
   const history = useNavigate();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [mobileClose, setMobileClose] = React.useState(true);
+  
   const [menudata, setMenudata] = React.useState("About");
   let ls=JSON.parse(localStorage.getItem("token"));
   let token = ls?ls: {fname:"",lname:""}
