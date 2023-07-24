@@ -1,4 +1,13 @@
-import { Box, Button, Grid, Paper, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardMedia,
+  Grid,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 import React, { useState } from "react";
@@ -6,23 +15,20 @@ import Icon from "react-icons-kit";
 import { eye } from "react-icons-kit/icomoon/eye";
 import { eyeBlocked } from "react-icons-kit/icomoon/eyeBlocked";
 import { Link, useNavigate } from "react-router-dom";
-
-const useStyles = makeStyles({
-  field: {
-    margintop: 20,
-    marginBottom: 20,
-    display: "block",
-  },
-});
+import "./Login.css";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { GradientTwoTone } from "@mui/icons-material";
 
 function Login() {
-  const classes = useStyles();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const [types, setTypes] = useState("password");
 
   const [icon, setIcon] = useState(eyeBlocked);
+
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   const HandleToggle = () => {
     if (types === "password") {
@@ -36,67 +42,116 @@ function Login() {
 
   let nav = useNavigate();
 
+  let local = JSON.parse(localStorage.getItem("Users"));
   const handleSubmit = () => {
-    let local = JSON.parse(localStorage.getItem("Users"));
-    local.map((value, index) => {
-      if (value.email === username && value.password === password) {
-        alert("Login Successful!!");
-        let token = value;
-        localStorage.setItem("token", JSON.stringify(token));
+    if (username === "" || password === "") {
+      alert("Field should not be empty");
+    } else {
+      local.map((value, index) => {
+        if (value.email === username && value.password === password) {
+          alert("Login Successful!!");
+          let token = value;
+          localStorage.setItem("token", JSON.stringify(token));
+        }
+      });
+      if (localStorage.getItem("token")) {
+        nav("/sidebar");
+      } else {
+        alert("Email or Password is Invalid");
       }
-    });
-    if (localStorage.getItem("token")) {
-      nav("/sidebar");
+    }
+  };
+
+  const Validate = (password) => {
+    if (password.length < 8) {
+      setError("*Password must be at least 8 characters");
+      return false;
+    } else if (!/\d/.test(password)) {
+      setError("*Password must contain at least one number");
+      return false;
+    } else if (!/[A-Z]/.test(password)) {
+      setError("*Password must contain at least one uppercase letter");
+      return false;
+    }
+    setError("");
+    return true;
+  };
+
+  let handleError = () => {
+    if (Validate(password)) {
+      //submit data
+    }
+  };
+
+  const Validate2 = () => {
+    const regex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+    if (username === "") {
+      setMessage("*Please Enter Valid Email");
+    } else if (!regex.test(username)) {
+      setMessage("*Email is not Valid");
+    } else if (!username.match(regex)) {
+      setMessage("*Email is Invalid");
+    } else {
+      setMessage("");
     }
   };
 
   return (
-    <Box sx={{ backgroundImage: "" }}>
-      <Paper
-        elevation={5}
+    <Box>
+      <Card
+        className="paper12"
+        elevation={8}
         sx={{
           justifyContent: "center",
-          width: { xs: "100%", md: "40rem" },
-          paddingBottom: "30px",
-          marginLeft: { md: "25%" },
-          marginTop: "100px",
+          width: { xs: "100%", md: "25%" },
+          paddingBottom: { xs: "50px" },
+          marginLeft: { md: "40%" },
           paddingTop: "20px",
-          // backgroundColor: "",
+          marginTop: { md: "100px" },
+          borderRadius:5
         }}
       >
+        <AccountCircleIcon sx={{ fontSize: "80px", color: "GrayText" }} />
         <Typography
-          variant="h4"
+          className="type1"
+          variant="h5"
           fontWeight={"bolder"}
           sx={{
-            mb: "40px",
+            mb: "10px",
             color: "#ff5722",
-            fontFamily: "monospace",
             textTransform: "uppercase",
+            fontFamily: "sans-serif",
+            fontSize: "30px",
+            textShadow: "2px 2px 3px black",
           }}
         >
           Login
         </Typography>
 
-        <Grid container direction={"column"} spacing={3}>
+        <Grid container direction={"column"} spacing={2}>
           <Grid item>
             <TextField
-              className={classes.field}
+              className="text1"
               id="username"
               label="Email"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              onKeyUp={Validate2}
+              helperText={<span style={{ color: "red" }}>{message}</span>}
             />
           </Grid>
 
           <Grid item display={"flex"} justifyContent="center" ml={8}>
             <TextField
-              className={classes.field}
+              className="text1"
               type={types}
               id="password"
               label="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            ></TextField>
+              helperText={<span style={{ color: "red" }}>{error}</span>}
+              onKeyUp={handleError}
+            />
             <Button size="small" onClick={HandleToggle}>
               <Icon icon={icon} size={20}></Icon>
             </Button>
@@ -115,10 +170,12 @@ function Login() {
           </Grid>
           <br />
           <Typography>
-            Are you New Member? Click <Link to={"/register"}>Register</Link>
+            <sup>
+              Are you New Member? Click <Link to={"/register"}>Register</Link>
+            </sup>
           </Typography>
         </Grid>
-      </Paper>
+      </Card>
     </Box>
   );
 }

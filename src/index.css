@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("../public/Img/adrian-infernus-GLf7bAwCdYg-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  background-repeat: no-repeat;
 }
 
 code {
@@ -12,6 +17,6 @@ code {
     monospace;
 }
 
-.m{
+.m {
   color: white;
 }

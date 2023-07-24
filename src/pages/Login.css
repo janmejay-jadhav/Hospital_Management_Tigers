@@ -1,0 +1,16 @@
+.paper12 {
+  background-image: url("https://media.istockphoto.com/id/1316048214/photo/doctor-sitting-at-table-and-typing-on-computer-keyboard-closeup.jpg?s=612x612&w=0&k=20&c=zM-KEnyOtT9jigOmYPIsGMWCrSEhD_J4OITff7DbmMQ=");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  isolation: isolate;
+}
+.paper12::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgb(243, 231, 231);
+  opacity: 0.4;
+}
+

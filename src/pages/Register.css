@@ -1,6 +1,21 @@
-.paper1{
-    background-image: url("https://media.istockphoto.com/id/1316048214/photo/doctor-sitting-at-table-and-typing-on-computer-keyboard-closeup.jpg?s=612x612&w=0&k=20&c=zM-KEnyOtT9jigOmYPIsGMWCrSEhD_J4OITff7DbmMQ=");
+.paper1 {
+    background-image: url("https://elements-video-cover-images-0.imgix.net/files/c7bd55bd-8b04-4ed4-a85c-85c05b3301b7/inline_image_preview.jpg?auto=compress%2Cformat&fit=min&h=394&w=700&s=ff6f2d5155baca16aa483f1fc290e544");
     background-repeat: no-repeat;
     background-size: cover;
-    
-}
+    position: relative;
+    isolation: isolate;
+  }
+  .paper1::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: rgb(243, 231, 231);
+    opacity: 0.4;
+    border-radius: 2.3em;
+  }
+  .text1{box-shadow:1px 1px 4px ;
+     border-radius:5px;
+     border-bottom:-10px;
+  }
+  

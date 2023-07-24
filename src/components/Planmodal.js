@@ -2,6 +2,8 @@ import { Button, Modal, TextField, Typography } from "@mui/material";
 import { alignProperty } from "@mui/material/styles/cssUtils";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import { json } from "react-router";
+import "../App.css";
 
 const style = {
   position: "absolute",
@@ -10,10 +12,11 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   //   bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 44,
+  boxShadow: 50,
   p: 4,
-  backgroundColor: "white",
+
+  textAlign: "center",
+
 };
 
 function Planmodal({ open, setOpen, plans }) {
@@ -33,51 +36,62 @@ function Planmodal({ open, setOpen, plans }) {
       [name]: value,
     });
   };
+  let modalinput = JSON.parse(localStorage.getItem("admindata")) || [];
+
+  let handleSubmit = () => {
+    modalinput.push(input);
+    localStorage.setItem("admindata", JSON.stringify(modalinput));
+    handleClose();
+  };
 
   return (
-    <div>
+    <div >
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <Typography variant="h5">ADD PLANS AND PRICE</Typography>
+        <Box sx={style} className="modal">
+          <Typography variant="h5" color="black">
+            ADD PLANS AND PRICE
+          </Typography>
           <TextField
+          className="textfield"
             onChange={handleiputchange}
             value={input.name}
             name="name"
-            placeholder={" TEST NAME"}
+            placeholder={"TEST NAME"}
+            sx={{ m: 2 }}
           ></TextField>
           <TextField
+          className="textfield"
             onChange={handleiputchange}
             value={input.price}
             name="price"
             type={"number"}
             placeholder={"PRICE"}
+            sx={{ m: 2 }}
           ></TextField>
           <TextField
+          className="textfield"
             onChange={handleiputchange}
             value={input.doctorName}
             name="doctorName"
             placeholder={"DOCTOR NAME"}
+            sx={{ m: 2 }}
           ></TextField>
           <TextField
+          className="textfield"
             onChange={handleiputchange}
             value={input.slots}
             name="slots"
             type={"number"}
             placeholder={"SLOT"}
+            sx={{ m: 2 }}
           ></TextField>
           <br />
-          <Button
-            variant="contained"
-            onClick={() => {
-              plans.push(input);
-              setOpen(false);
-            }}
-          >
+          <Button variant="contained" onClick={handleSubmit}>
             {" "}
             Submit
           </Button>
